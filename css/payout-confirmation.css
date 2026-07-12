@@ -1,0 +1,169 @@
+/* ==========================================================================
+   payout-confirmation.css — Person C
+   This is the one page in the whole demo allowed to take a bold swing:
+   a rubber-stamped rain-gauge receipt. Everything else on the site stays
+   quiet so this moment reads as a payoff, not a style change.
+   ========================================================================== */
+
+:root {
+  --pc-monsoon:  #1B4332;
+  --pc-turmeric: #C9A227;
+  --pc-rain:     #2A6F97;
+  --pc-paper:    #F7F3E8;
+  --pc-stamp:    #B33A3A;
+  --pc-ink:      #23231f;
+  --pc-ink-soft: #5b5a52;
+}
+
+.payout-main {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 20px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201,162,39,0.06), transparent 40%),
+    var(--pc-paper);
+}
+
+/* The receipt/ticket */
+.receipt {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #fffdf7;
+  padding: 40px 32px 32px;
+  text-align: center;
+  color: var(--pc-ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+
+  /* perforated edge, top and bottom */
+  background-image:
+    radial-gradient(circle, var(--pc-paper) 5px, transparent 5.5px);
+  background-repeat: repeat-x;
+  background-size: 20px 10px;
+  background-position: -6px -5px, -6px calc(100% - 5px);
+}
+.receipt::before,
+.receipt::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 10px;
+  background-image: radial-gradient(circle, #f4f1e9 5px, transparent 5.5px);
+  background-repeat: repeat-x;
+  background-size: 20px 10px;
+  background-position: -6px 0;
+}
+.receipt::before { top: -5px; }
+.receipt::after  { bottom: -5px; }
+
+.stamp {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--pc-stamp);
+  border: 2.5px solid var(--pc-stamp);
+  border-radius: 6px;
+  padding: 5px 10px;
+  transform: rotate(9deg);
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+}
+
+.receipt-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--pc-rain);
+  margin: 4px 0 18px;
+}
+
+.receipt-amount {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 9vw, 3.4rem);
+  color: var(--pc-monsoon);
+  margin: 0;
+  line-height: 1;
+}
+.receipt-amount .rupee { font-size: 0.55em; vertical-align: 6%; margin-right: 2px; }
+.receipt-amount .mono { font-family: 'Fraunces', serif; } /* amount stays display-font, not mono, so it reads as the hero */
+
+.receipt-sub {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: var(--pc-ink-soft);
+}
+
+.receipt-divider {
+  height: 0;
+  border-top: 1px dashed rgba(0,0,0,0.18);
+  margin: 24px 0;
+}
+
+.receipt-details {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  text-align: left;
+}
+.receipt-details > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.receipt-details dt {
+  font-size: 0.78rem;
+  color: var(--pc-ink-soft);
+}
+.receipt-details dd {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.receipt-details dd.mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.receipt-footnote {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--pc-ink-soft);
+  font-style: italic;
+}
+
+.payout-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-secondary {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid var(--pc-monsoon);
+  background: transparent;
+  color: var(--pc-monsoon);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: rgba(27,67,50,0.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp { transition: none; }
+}

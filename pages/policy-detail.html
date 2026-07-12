@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy Detail — FarmFuture</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Global tokens/nav/footer styles already built by Person A -->
+<link rel="stylesheet" href="../css/style.css">
+<!-- This page's own styles -->
+<link rel="stylesheet" href="../css/policy-detail.css">
+</head>
+<body>
+
+  <!-- NOTE FOR PERSON C: copy the exact <header>/<nav> markup Person A
+       already wrote in ../index.html so main.js's nav-toggle script keeps
+       working unchanged. This is a reasonable placeholder shape. -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="../index.html" class="site-logo">FarmFuture</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="policy-detail">
+
+    <a href="marketplace.html" class="back-link">&larr; Back to marketplace</a>
+
+    <section class="policy-header" id="policy-header">
+      <!-- filled by policy-detail.js -->
+      <p class="ph-eyebrow" id="ph-insurer">Loading policy…</p>
+      <h1 class="ph-title" id="ph-cropregion">—</h1>
+      <p class="ph-rating" id="ph-rating"></p>
+    </section>
+
+    <section class="policy-ticket" aria-label="Policy summary">
+      <div class="ticket-punch" aria-hidden="true"></div>
+      <div class="ticket-row">
+        <span class="ticket-label">Premium</span>
+        <span class="ticket-value mono" id="pt-premium">—</span>
+      </div>
+      <div class="ticket-row">
+        <span class="ticket-label">Coverage</span>
+        <span class="ticket-value mono" id="pt-coverage">—</span>
+      </div>
+      <div class="ticket-row">
+        <span class="ticket-label">Payout speed</span>
+        <span class="ticket-value mono" id="pt-speed">—</span>
+      </div>
+      <div class="ticket-row ticket-trigger">
+        <span class="ticket-label">Trigger condition</span>
+        <span class="ticket-value" id="pt-trigger">—</span>
+      </div>
+    </section>
+
+    <section class="index-chart-section">
+      <h2>Rainfall index vs. threshold</h2>
+      <p class="chart-caption">Weekly rainfall as % of normal for this region. If the line drops below the dashed threshold, the policy pays out automatically.</p>
+      <div id="index-chart" class="index-chart" aria-label="Rainfall index chart"></div>
+    </section>
+
+    <section class="buy-section">
+      <button class="btn-buy" id="buy-btn">Buy this policy</button>
+      <p class="buy-note">This purchases a demo policy and takes you to the live trigger dashboard for this region.</p>
+      <a href="payout-confirmation.html" class="skip-link">Skip ahead: preview payout screen &rarr;</a>
+    </section>
+
+  </main>
+
+  <!-- NOTE FOR PERSON C: copy Person A's real footer markup here -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> FarmFuture. Not a licensed insurance product.</p>
+  </footer>
+
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/policy-detail.js"></script>
+</body>
+</html>

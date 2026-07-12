@@ -1,0 +1,175 @@
+/* ==========================================================================
+   policy-detail.css — Person C
+   Uses the shared tokens from style.css if they exist (--monsoon-green etc).
+   Falls back to its own values below so this page still looks right
+   even before it's wired into the global stylesheet. Reconcile the
+   :root block with Person A's real tokens in style.css if names differ.
+   ========================================================================== */
+
+:root {
+  --pd-monsoon:  #1B4332;
+  --pd-turmeric: #C9A227;
+  --pd-rain:     #2A6F97;
+  --pd-paper:    #F7F3E8;
+  --pd-ink:      #23231f;
+  --pd-ink-soft: #5b5a52;
+}
+
+.policy-detail {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+  background: var(--pd-paper);
+  color: var(--pd-ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-size: 0.9rem;
+  color: var(--pd-monsoon);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.back-link:hover { border-bottom-color: var(--pd-monsoon); }
+
+.policy-header { margin-bottom: 28px; }
+
+.ph-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pd-rain);
+  margin: 0 0 6px;
+}
+
+.ph-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 8px;
+  color: var(--pd-monsoon);
+}
+
+.ph-rating {
+  font-size: 0.9rem;
+  color: var(--pd-ink-soft);
+  margin: 0;
+}
+
+/* The "ticket" — the signature material of this whole demo */
+.policy-ticket {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.ticket-punch {
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  right: 24px;
+  height: 0;
+  border-top: 2px dashed rgba(0,0,0,0.15);
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+.ticket-row:last-child { border-bottom: none; }
+
+.ticket-label {
+  font-size: 0.85rem;
+  color: var(--pd-ink-soft);
+}
+
+.ticket-value {
+  font-weight: 600;
+  color: var(--pd-ink);
+  text-align: right;
+}
+
+.ticket-value.mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+}
+
+.ticket-trigger .ticket-value {
+  font-weight: 400;
+  max-width: 60%;
+  font-size: 0.9rem;
+  color: var(--pd-ink-soft);
+}
+
+.index-chart-section { margin-bottom: 44px; }
+
+.index-chart-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  margin: 0 0 6px;
+  color: var(--pd-monsoon);
+}
+
+.chart-caption {
+  font-size: 0.85rem;
+  color: var(--pd-ink-soft);
+  margin: 0 0 16px;
+  max-width: 52ch;
+}
+
+.index-chart {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.index-chart svg { display: block; width: 100%; height: auto; }
+
+.buy-section {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.btn-buy {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 4px;
+  background: var(--pd-monsoon);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-buy:hover { background: #143526; }
+.btn-buy:focus-visible { outline: 3px solid var(--pd-turmeric); outline-offset: 2px; }
+
+.buy-note {
+  margin: 12px 0 4px;
+  font-size: 0.8rem;
+  color: var(--pd-ink-soft);
+}
+
+.skip-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--pd-rain);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-buy { transition: none; }
+}

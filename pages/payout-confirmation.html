@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payout Confirmed — FarmFuture</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/payout-confirmation.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="../index.html" class="site-logo">FarmFuture</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="payout-main">
+
+    <div class="receipt" id="receipt">
+      <div class="stamp" id="stamp">TRIGGERED</div>
+
+      <p class="receipt-eyebrow">Rainfall index crossed threshold</p>
+      <h1 class="receipt-amount">
+        <span class="rupee">₹</span><span id="payout-amount" class="mono">—</span>
+      </h1>
+      <p class="receipt-sub">sent directly to farmer's UPI account</p>
+
+      <div class="receipt-divider" aria-hidden="true"></div>
+
+      <dl class="receipt-details">
+        <div><dt>Policy</dt><dd id="d-policy">—</dd></div>
+        <div><dt>Region</dt><dd id="d-region">—</dd></div>
+        <div><dt>Transaction ID</dt><dd id="d-txn" class="mono">—</dd></div>
+        <div><dt>Settled</dt><dd id="d-time" class="mono">—</dd></div>
+      </dl>
+
+      <div class="receipt-divider" aria-hidden="true"></div>
+
+      <p class="receipt-footnote">No claim form. No field visit. No dispute.</p>
+    </div>
+
+    <div class="payout-actions">
+      <a href="marketplace.html" class="btn-secondary">Back to marketplace</a>
+      <button class="btn-secondary" id="print-btn">Download receipt</button>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> FarmFuture. Not a licensed insurance product.</p>
+  </footer>
+
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/payout-confirmation.js"></script>
+</body>
+</html>
