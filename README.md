@@ -14,6 +14,8 @@ months-long wait.
 
 ---
 
+## Live structure
+```
 farmfuture-prototype/
 │
 ├── index.html                  # Landing page — the pitch
@@ -45,7 +47,8 @@ farmfuture-prototype/
 │   └── dashboard.html               # rainfall vs threshold dashboard 
 │
 └── /data
-    └── mock-weather.json            # sample IMD/NASA POWER–style data 
+    └── mock-weather.json            # sample IMD/NASA POWER–style data
+```
     
 ## How to run it
 
