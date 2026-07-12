@@ -14,39 +14,39 @@ months-long wait.
 
 ---
 
-## Live structure
-
-```
 farmfuture-prototype/
 │
 ├── index.html                  # Landing page — the pitch
 ├── README.md
 │
 ├── /assets
-│   └── /images                 # (add screenshots / logos here)
+│   └── /images                 
 │
 ├── /css
-│   ├── style.css               # global tokens, nav, footer, buttons, cards
-│   ├── landing.css             # hero, before/after, how-it-works, teaser
-│   ├── marketplace.css         # filters, policy cards, compare tray
-│   └── dashboard.css           # trigger dashboard (Person B)
+│   ├── style.css                    # global tokens, nav, footer, buttons, cards 
+│   ├── landing.css                  # hero, before/after, how-it-works, teaser 
+│   ├── marketplace.css              # filters, policy cards, compare tray 
+│   ├── policy-detail.css            # policy ticket + rainfall chart 
+│   ├── payout-confirmation.css      # rubber-stamp receipt screen 
+│   └── dashboard.css                # trigger dashboard 
 │
 ├── /js
-│   ├── main.js                 # shared: nav toggle, footer year
-│   ├── mock-data.js            # fake policies + stats — the shared "API"
-│   ├── marketplace.js          # policy grid, filters, compare logic
-│   └── dashboard.js            # trigger simulation (Person B)
+│   ├── main.js                      # shared: nav toggle, footer year 
+│   ├── mock-data.js                 # fake policies + stats — the shared "API" 
+│   ├── marketplace.js               # policy grid, filters, compare logic 
+│   ├── policy-detail.js             # reads POLICIES by ?id=, draws chart 
+│   ├── payout-confirmation.js       # fake txn id, reads trigger handoff 
+│   └── dashboard.js                 # trigger simulation 
 │
 ├── /pages
-│   ├── marketplace.html        # browse & compare policies
-│   ├── policy-detail.html      # single policy + buy flow (Person C)
-│   ├── dashboard.html          # rainfall vs threshold dashboard (Person B)
-│   └── payout-confirmation.html # "money sent" screen (Person C)
+│   ├── marketplace.html             # browse & compare policies 
+│   ├── policy-detail.html           # single policy + buy flow  
+│   ├── payout-confirmation.html     # "money sent" screen  
+│   └── dashboard.html               # rainfall vs threshold dashboard 
 │
 └── /data
-    └── mock-weather.json       # sample IMD/NASA POWER–style data (Person B)
-```
-
+    └── mock-weather.json            # sample IMD/NASA POWER–style data 
+    
 ## How to run it
 
 No build step, no server required to *view* it — but a local server avoids
