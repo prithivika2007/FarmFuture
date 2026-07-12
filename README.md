@@ -80,16 +80,16 @@ method above.)
   insurers, 4 crops, and 6 regions, each with a `sampleIndex` array (weekly
   % of normal rainfall/temperature) that both the marketplace sparklines and
   the trigger dashboard read from.
-
-## Still to build
-
-- **Trigger dashboard** (`pages/dashboard.html`) — live-looking chart with a
-  "Simulate Season" button that animates the index crossing the threshold.
 - **Policy detail + buy flow** (`pages/policy-detail.html`) — reads a policy
   by `?id=` query param from `POLICIES` in `mock-data.js`.
 - **Payout confirmation** (`pages/payout-confirmation.html`) — "trigger hit →
   ₹X sent to UPI" screen with a fake transaction ID and timestamp, wired to
   fire after the dashboard's simulated trigger.
+
+## Still to build
+
+- **Trigger dashboard** (`pages/dashboard.html`) — live-looking chart with a
+  "Simulate Season" button that animates the index crossing the threshold.
 
 ## Design notes
 
