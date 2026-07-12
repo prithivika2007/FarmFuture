@@ -45,13 +45,13 @@
 
       <div class="hero-chart-card card">
         <div class="hero-chart-head">
-          <h3>Vidarbha cotton belt \u2014 June rainfall</h3>
+          <h3>Vidarbha cotton belt — June rainfall</h3>
           <span class="mono">% of 10-yr average</span>
         </div>
 
         <div class="rain-chart">
           <div class="threshold-line" style="bottom: 60%;"><span>60% trigger line</span></div>
-          <div class="trigger-flag" style="left: 68%;">Trigger met \u2192 payout sent</div>
+          <div class="trigger-flag" style="left: 68%;">Trigger met → payout sent</div>
           <div class="rain-bar" style="--h: 94%;"></div>
           <div class="rain-bar" style="--h: 90%;"></div>
           <div class="rain-bar" style="--h: 82%;"></div>
@@ -67,7 +67,7 @@
 
         <div class="hero-chart-foot">
           <span class="mono">Source: NASA POWER (mock)</span>
-          <span class="payout-pill">\u20B99,000 sent in 4 days</span>
+          <span class="payout-pill">₹9,000 sent in 4 days</span>
         </div>
       </div>
     </div>
@@ -83,21 +83,21 @@
       <h2>Claims shouldn't need a witness.</h2>
       <div class="compare-grid">
         <div class="compare-col is-before card">
-          <h3>Before \u2014 PMFBY today</h3>
+          <h3>Before — PMFBY today</h3>
           <ul>
             <li>Crop damage has to be manually surveyed by a field officer</li>
-            <li>Assessments are subjective \u2014 and sometimes disputed by the insurer</li>
+            <li>Assessments are subjective — and sometimes disputed by the insurer</li>
             <li>Local agents can under-report damage</li>
             <li>Farmers often wait 6+ months for a payout</li>
             <li>Payout can arrive after the next planting season has already begun</li>
           </ul>
         </div>
-        <div class="compare-arrow" aria-hidden="true">\u2192</div>
+        <div class="compare-arrow" aria-hidden="true">→</div>
         <div class="compare-col is-after card">
-          <h3>After \u2014 with FarmFuture</h3>
+          <h3>After — with FarmFuture</h3>
           <ul>
             <li>Rainfall and temperature are tracked automatically by satellite/weather data</li>
-            <li>The trigger is public data \u2014 there's nothing to dispute</li>
+            <li>The trigger is public data — there's nothing to dispute</li>
             <li>No field visit, no claim form, no local agent in the loop</li>
             <li>Payout is confirmed within days of the threshold being crossed</li>
             <li>Money lands in time to matter for the next sowing decision</li>
@@ -123,7 +123,7 @@
           <span class="eyebrow">Marketplace</span>
           <h2>Multiple insurers. One comparison.</h2>
         </div>
-        <a href="pages/marketplace.html" class="btn btn-ghost">Browse all policies \u2192</a>
+        <a href="pages/marketplace.html" class="btn btn-ghost">Browse all policies →</a>
       </div>
       <div class="teaser-grid" id="teaser-grid"></div>
     </div>
@@ -135,12 +135,12 @@
       <h2>A proven model, adapted for India.</h2>
       <div class="proof-grid">
         <div>
-          <p>Index-based insurance already runs at scale elsewhere \u2014 ACRE Africa has used weather-indexed policies to cover smallholder farmers across Kenya, Rwanda, and Tanzania for over a decade, and similar index instruments back sovereign disaster-risk pools globally.</p>
-          <p>The mechanism isn't experimental. What's missing in India is a marketplace that makes it easy for a farmer to find, compare, and buy the right policy for their crop, region, and sowing month \u2014 that's the gap FarmFuture fills.</p>
+          <p>Index-based insurance already runs at scale elsewhere — ACRE Africa has used weather-indexed policies to cover smallholder farmers across Kenya, Rwanda, and Tanzania for over a decade, and similar index instruments back sovereign disaster-risk pools globally.</p>
+          <p>The mechanism isn't experimental. What's missing in India is a marketplace that makes it easy for a farmer to find, compare, and buy the right policy for their crop, region, and sowing month — that's the gap FarmFuture fills.</p>
         </div>
         <div class="caveat-box">
           <span class="eyebrow">An honest caveat</span>
-          <p>Satellite and weather-station data isn't uniformly fine-grained across every district in India yet. FarmFuture is the most viable path forward as ground-station density and satellite resolution keep improving \u2014 not a claim that it's pixel-perfect everywhere today.</p>
+          <p>Satellite and weather-station data isn't uniformly fine-grained across every district in India yet. FarmFuture is the most viable path forward as ground-station density and satellite resolution keep improving — not a claim that it's pixel-perfect everywhere today.</p>
         </div>
       </div>
     </div>
@@ -155,7 +155,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span data-year></span> FarmFuture \u2014 a student prototype, not a live insurance product.</p>
+      <p>&copy; <span data-year></span> FarmFuture — a student prototype, not a live insurance product.</p>
       <ul class="footer-links">
         <li><a href="pages/marketplace.html">Marketplace</a></li>
         <li><a href="pages/dashboard.html">Trigger dashboard</a></li>
@@ -182,11 +182,11 @@
     document.getElementById("teaser-grid").innerHTML = POLICIES.slice(0, 3).map((p) => `
       <div class="card" style="padding:22px;">
         <span class="tag ${p.triggerType === 'Heatwave' ? 'tag-heat' : 'tag-rain'}">${p.triggerType}</span>
-        <h3 style="margin-top:12px;">${p.crop} \u2014 ${p.region}</h3>
+        <h3 style="margin-top:12px;">${p.crop} — ${p.region}</h3>
         <p style="color:var(--color-ink-soft);font-size:0.9rem;margin-top:6px;">${p.triggerLabel}</p>
         <div style="display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--color-line);">
-          <span class="mono" style="font-size:0.85rem;">\u20B9${p.premium} premium</span>
-          <span class="mono" style="font-size:0.85rem;">\u20B9${p.coverage.toLocaleString('en-IN')} cover</span>
+          <span class="mono" style="font-size:0.85rem;">₹${p.premium} premium</span>
+          <span class="mono" style="font-size:0.85rem;">₹${p.coverage.toLocaleString('en-IN')} cover</span>
         </div>
       </div>`).join("");
   </script>
