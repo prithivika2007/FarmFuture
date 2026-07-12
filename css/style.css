@@ -1,0 +1,169 @@
+/* ===================================================================
+   style.css — global tokens + shared components (nav, footer, buttons)
+   Design direction: "the threshold line" — a monsoon-and-turmeric
+   palette, a serif built for weather/almanac data, and a recurring
+   motif of a horizontal line with a marker dot, standing in for the
+   rainfall trigger line that the whole product is built around.
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Color */
+  --color-bg: #eff1e4;           /* pale mist / rice-paper */
+  --color-surface: #ffffff;
+  --color-surface-sunk: #e7e9da;
+  --color-ink: #1e2a22;          /* deep forest ink — primary text */
+  --color-ink-soft: #4b5a50;     /* secondary text */
+  --color-monsoon: #1b4b43;      /* deep teal-green — brand / nav / buttons */
+  --color-monsoon-dark: #123430;
+  --color-turmeric: #d9a441;     /* golden amber — the signature trigger color */
+  --color-turmeric-dark: #b8842e;
+  --color-clay: #a85a2a;         /* soil clay — used sparingly for warmth */
+  --color-rain: #3e7cb1;         /* rain blue — data / rainfall bars */
+  --color-line: rgba(30, 42, 34, 0.14);
+  --color-danger: #b23a32;
+  --color-good: #3e7a4f;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  /* Shape */
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 22px;
+  --shadow-card: 0 1px 2px rgba(30, 42, 34, 0.06), 0 10px 28px rgba(30, 42, 34, 0.08);
+  --container-w: 1180px;
+}
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font-family: inherit; }
+
+/* ---------- typography scale ---------- */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; margin: 0; color: var(--color-ink); }
+h1 { font-size: clamp(2.4rem, 4.4vw, 4.1rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 600; }
+h3 { font-size: 1.3rem; font-weight: 600; }
+p { margin: 0; }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-monsoon);
+  font-weight: 600;
+}
+.lede { font-size: 1.15rem; color: var(--color-ink-soft); max-width: 46ch; }
+.mono { font-family: var(--font-mono); }
+
+/* ---------- layout helpers ---------- */
+.container { max-width: var(--container-w); margin: 0 auto; padding: 0 24px; }
+.section { padding: 88px 0; }
+@media (max-width: 720px) { .section { padding: 56px 0; } }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.96rem;
+  padding: 13px 24px; border-radius: 999px; border: 1px solid transparent;
+  cursor: pointer; text-decoration: none; transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 3px solid var(--color-turmeric); outline-offset: 2px; }
+.btn-primary { background: var(--color-monsoon); color: #fdfcf6; }
+.btn-primary:hover { background: var(--color-monsoon-dark); }
+.btn-ghost { background: transparent; color: var(--color-monsoon); border-color: var(--color-line); }
+.btn-ghost:hover { border-color: var(--color-monsoon); }
+.btn-sm { padding: 9px 16px; font-size: 0.86rem; }
+
+/* ---------- the signature "threshold" divider ---------- */
+.divider-threshold {
+  position: relative;
+  height: 1px;
+  background: var(--color-line);
+  margin: 0;
+}
+.divider-threshold::before {
+  content: "";
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--color-turmeric);
+  box-shadow: 0 0 0 5px var(--color-bg);
+}
+
+/* ---------- nav ---------- */
+.site-nav {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(239, 241, 228, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-line);
+}
+.site-nav .container { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px; }
+.brand { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--color-ink); }
+.brand-mark { width: 26px; height: 26px; border-radius: 7px; background: var(--color-monsoon); position: relative; flex: none; }
+.brand-mark::after {
+  content: ""; position: absolute; left: 5px; right: 5px; top: 13px; height: 2px; background: var(--color-turmeric);
+}
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; font-weight: 500; font-size: 0.95rem; color: var(--color-ink-soft); padding-bottom: 4px; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--color-ink); border-bottom-color: var(--color-turmeric); }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--color-ink); margin: 4px 0; }
+
+@media (max-width: 860px) {
+  .nav-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 4px; background: var(--color-surface); padding: 12px 24px 20px; border-bottom: 1px solid var(--color-line); display: none; }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { width: 100%; padding: 10px 0; }
+  .nav-toggle { display: block; }
+}
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--color-line); padding: 44px 0; margin-top: 40px; }
+.site-footer .container { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+.site-footer p { color: var(--color-ink-soft); font-size: 0.88rem; }
+.footer-links { display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; }
+.footer-links a { text-decoration: none; color: var(--color-ink-soft); font-size: 0.88rem; }
+.footer-links a:hover { color: var(--color-ink); }
+
+/* ---------- tags / badges ---------- */
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 999px; background: var(--color-surface-sunk); color: var(--color-ink-soft);
+  border: 1px solid var(--color-line);
+}
+.tag-rain::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--color-rain); }
+.tag-heat::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--color-clay); }
+
+/* ---------- card base ---------- */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(30,42,34,0.05);
+}

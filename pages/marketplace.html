@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace — FarmFuture</title>
+  <meta name="description" content="Compare weather-indexed crop insurance policies by crop, region, premium, and payout speed.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/marketplace.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        FarmFuture
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="marketplace.html" aria-current="page">Marketplace</a></li>
+        <li><a href="dashboard.html">Trigger dashboard</a></li>
+        <li><a href="../index.html#how-it-works">How it works</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="market-header container">
+    <span class="eyebrow">Marketplace</span>
+    <h1>Compare policies across insurers</h1>
+    <p class="lede">Every policy here pays out on a public rainfall or temperature index \u2014 not a field officer's judgment. Filter by crop and region, then select up to a few to compare side by side.</p>
+  </header>
+
+  <div class="container">
+    <div class="filter-bar card">
+      <div class="filter-field">
+        <label for="filter-crop">Crop</label>
+        <select id="filter-crop"></select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-region">Region</label>
+        <select id="filter-region"></select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-sort">Sort by</label>
+        <select id="filter-sort">
+          <option value="default">Recommended</option>
+          <option value="premium-asc">Lowest premium</option>
+          <option value="coverage-desc">Highest coverage</option>
+          <option value="speed-asc">Fastest payout</option>
+          <option value="rating-desc">Highest rated</option>
+        </select>
+      </div>
+      <button id="filter-reset" class="btn btn-ghost btn-sm filter-reset">Reset filters</button>
+    </div>
+
+    <p class="results-count" id="results-count"></p>
+
+    <div class="policy-grid" id="policy-grid"></div>
+
+    <div class="empty-state" id="empty-state" hidden>
+      <h3>No policies match those filters</h3>
+      <p>Try a different crop or region, or reset the filters above.</p>
+    </div>
+  </div>
+
+  <section class="compare-table-section container" id="compare-table-section" hidden>
+    <span class="eyebrow">Side by side</span>
+    <h2 style="margin-bottom:20px;">Your comparison</h2>
+    <div class="compare-table-wrap" id="compare-table-wrap"></div>
+  </section>
+
+  <div class="compare-tray" id="compare-tray">
+    <span class="mono" id="compare-count">0 selected</span>
+    <button class="btn btn-primary btn-sm" id="compare-btn">Compare</button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span data-year></span> FarmFuture \u2014 a student prototype, not a live insurance product.</p>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="dashboard.html">Trigger dashboard</a></li>
+        <li><a href="https://github.com/prithivika2007/FarmFuture" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/marketplace.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
