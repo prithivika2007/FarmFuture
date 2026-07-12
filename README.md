@@ -19,10 +19,7 @@ months-long wait.
 farmfuture-prototype/
 │
 ├── index.html                  # Landing page — the pitch
-├── README.md
-│
-├── /assets
-│   └── /images                 
+├── README.md                
 │
 ├── /css
 │   ├── style.css                    # global tokens, nav, footer, buttons, cards 
@@ -50,10 +47,10 @@ farmfuture-prototype/
     └── mock-weather.json            # sample IMD/NASA POWER–style data
 ```
     
-## How to run it
+## How to run it locally
 
-No build step, no server required to *view* it — but a local server avoids
-some browsers' quirks with relative script paths, so it's the recommended way:
+No build step required — plain HTML/CSS/JS. A local server is recommended
+to avoid relative-path quirks in some browsers:
 
 ```bash
 cd farmfuture-prototype
@@ -63,9 +60,12 @@ python3 -m http.server 8000
 Then open **http://localhost:8000** in your browser.
 
 (Opening `index.html` directly by double-clicking also works in most
-browsers, since everything is plain HTML/CSS/JS with no imports that require
-a server — but if a page looks unstyled or scripts don't run, use the server
-method above.)
+browsers — but if a page looks unstyled or scripts don't run, use the
+server method above, or VS Code's Live Server extension.)
+
+## Live demo
+
+Deployed via GitHub Pages: **[add your GitHub Pages URL here once live]**
 
 ## What's built so far
 
@@ -85,11 +85,10 @@ method above.)
 - **Payout confirmation** (`pages/payout-confirmation.html`) — "trigger hit →
   ₹X sent to UPI" screen with a fake transaction ID and timestamp, wired to
   fire after the dashboard's simulated trigger.
-
-## Still to build
-
-- **Trigger dashboard** (`pages/dashboard.html`) — live-looking chart with a
-  "Simulate Season" button that animates the index crossing the threshold.
+- **Trigger dashboard** (`pages/dashboard.html`) — live rainfall-deficit
+  progress bar, weekly rainfall bar chart, and a "Simulate Season" button
+  that animates the index crossing the 40% threshold, firing the payout
+  alert automatically once the trigger condition is met.
 
 ## Design notes
 
@@ -104,7 +103,7 @@ numbers to read like real sensor data, not decoration.
 ## Tech
 
 Plain HTML, CSS, and vanilla JavaScript. No frameworks, no build tools, no
-npm install. Deployable as-is to GitHub Pages.
+npm install. Deployed via GitHub Pages.
 
 ---
 
