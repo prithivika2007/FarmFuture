@@ -65,7 +65,7 @@ server method above, or VS Code's Live Server extension.)
 
 ## Live demo
 
-Deployed via GitHub Pages: **[add your GitHub Pages URL here once live]**
+Deployed via GitHub Pages: **https://prithivika2007.github.io/FarmFuture/index.html**
 
 ## What's built so far
 
