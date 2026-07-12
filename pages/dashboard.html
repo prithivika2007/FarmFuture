@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmFuture — Trigger Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+
+  <header class="site-nav">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark"></span>
+      FarmFuture
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="dashboard.html" aria-current="page">Trigger Dashboard</a></li>
+    </ul>
+  </div>
+</header>
+
+  <main class="dashboard-container">
+
+    <section class="policy-summary">
+      <h1>Live Trigger Dashboard</h1>
+      <p id="policy-meta">Loading policy details...</p>
+    </section>
+
+    <section class="trigger-visual">
+      <div class="progress-wrap">
+        <p class="progress-label">
+          Rainfall Deficit Progress
+          <span id="progress-percent">0%</span>
+        </p>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+          <div class="threshold-marker" id="threshold-marker"></div>
+        </div>
+        <p class="threshold-caption" id="threshold-caption">
+          Trigger threshold: 40% below normal
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">Normal Rainfall</span>
+          <span class="stat-value" id="stat-normal">--</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Cumulative Rainfall So Far</span>
+          <span class="stat-value" id="stat-cumulative">--</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Current Week</span>
+          <span class="stat-value" id="stat-week">--</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Status</span>
+          <span class="stat-value" id="stat-status">Monitoring</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2>Weekly Rainfall Trend</h2>
+      <div class="bar-chart" id="bar-chart">
+        <!-- JS will inject weekly bars here -->
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="simulate-btn">▶ Simulate Season</button>
+      <button id="reset-btn">Reset</button>
+    </section>
+
+    <section id="payout-alert" class="payout-alert hidden">
+      ⚠️ Trigger threshold crossed! Payout of <span id="payout-amount">₹0</span> initiated.
+      <a href="payout-confirmation.html">View Payout →</a>
+    </section>
+
+  </main>
+
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

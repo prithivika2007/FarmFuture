@@ -1,0 +1,19 @@
+{
+  "region": "Villupuram, Tamil Nadu",
+  "crop": "Groundnut",
+  "policyPeriod": "Jun 2026 - Sep 2026",
+  "normalRainfallMM": 450,
+  "triggerThresholdPercent": 40,
+  "triggerConditionText": "Payout triggers if rainfall drops 40% below normal during sowing month",
+  "weeklyReadings": [
+    { "week": "Week 1", "rainfallMM": 62, "cumulativeMM": 62 },
+    { "week": "Week 2", "rainfallMM": 58, "cumulativeMM": 120 },
+    { "week": "Week 3", "rainfallMM": 45, "cumulativeMM": 165 },
+    { "week": "Week 4", "rainfallMM": 30, "cumulativeMM": 195 },
+    { "week": "Week 5", "rainfallMM": 20, "cumulativeMM": 215 },
+    { "week": "Week 6", "rainfallMM": 15, "cumulativeMM": 230 },
+    { "week": "Week 7", "rainfallMM": 10, "cumulativeMM": 240 },
+    { "week": "Week 8", "rainfallMM": 8, "cumulativeMM": 248 }
+  ],
+  "payoutAmountINR": 8500
+}
